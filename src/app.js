@@ -4,6 +4,7 @@ const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 const app = express()
+const port = process.env.PORT || 3000
 
 
 //define path for express config
@@ -49,7 +50,7 @@ app.get('/help', (req,res)=> {
 
     
 // })
-// app.get('/about',(req,res)=>{
+// app.get('/about',(req,res)=>{ 
 //     res.send(express.static(path.join(__dirname,'../public/about.html')))
 // })
 app.get('/weather',(req,res)=>{
@@ -112,6 +113,6 @@ app.get('*',(req,res) =>{
 })
 
 //this let us configure what server will do once someone tries to get resources from url
-app.listen(3000, ()=>{
-    console.log('Server running on port 3000')
+app.listen(port, ()=>{
+    console.log('Server running on port port' +port)
 })
